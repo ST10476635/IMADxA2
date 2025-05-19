@@ -11,19 +11,19 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint("MissingInflatedId", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
         val startButton = findViewById<Button>(R.id.btnStart)
-        val WelcomeScreen = findViewById<TextView>(R.id.txtWelcomeText)
+        val welcomeScreen = findViewById<TextView>(R.id.txtWelcomeText)
 
-        WelcomeScreen.text = "Welcome to Flashcard History game!\n\nTest your knowledge of historical facts with 5 True/ false questions."
+        welcomeScreen.text = "Welcome to Flashcard History game!\n\nTest your knowledge of historical facts with 5 True/ false questions."
 
         startButton.setOnClickListener {
-            val intent = Intent (this,MainActivity::class.java)
+            val intent = Intent (this,MainActivity2Questions::class.java)
             startActivity(intent)
         }
 

@@ -16,19 +16,23 @@ class MainActivity2Questions : AppCompatActivity() {
     private val questions = arrayOf(
         "Nelson Mandela was the president of South Africa in 1994","The World War II ended in 1945","The Berlin Wall fel in 1989","The Renaissance began in the 14th century","The United States declared independence in 1776"
     )
-    private val answers = booleanArrayOf(true,true,true,true,true)
+    private val answers = booleanArrayOf(true, true, true, true, true)
     private var currentQuestionindex = 0
     private var score = 0
 
-    private fun displayQuestion(){
+    private fun displayQuestion() {
         val questionsText = findViewById<TextView>(R.id.txtQuestions)
         questionsText.text = questions[currentQuestionindex]
     }
-    private fun checkAnswer(userAnswer Boolean){
+
+    private fun checkAnswer(userAnswer: Boolean) {
         val isCorrect = userAnswer == answers[currentQuestionindex]
-        if (isCorrect){
+
+        if (isCorrect) {
             score++
-            Toast.makeText(this,"Correct!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@MainActivity2Questions, "Correct!", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this@MainActivity2Questions, "Incorrect!", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -38,7 +42,6 @@ class MainActivity2Questions : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main_activity2_qustions)
-        displayQuestion()
 
         val trueButton = findViewById<Button>(R.id.btnTrue)
         val falseButton = findViewById<Button>(R.id.btnFalse)
@@ -50,24 +53,33 @@ class MainActivity2Questions : AppCompatActivity() {
         falseButton.setOnClickListener {
             checkAnswer(false)
         }
+
         nextButton.setOnClickListener {
             currentQuestionindex++
-            if (currentQuestionindex<questions.size) {
-                displayQuestion()
-            } else {
+            if (currentQuestionindex < questions.size) {
 
+                displayQuestion() }
+            else {
+                // All questions answered should send user to next screen
                 val intent = Intent(this, ScoreActivity::class.java)
-                intent.putExtras("Score", score)
-                intent.putExtras("TOTAL QUESTIONS", questions.size)
+                intent.putExtra("Score", score)
+                intent.putExtra("Total Questions", questions.size)
                 startActivity(intent)
                 finish()
             }
+        }
 
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+
+
+            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+                val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+                insets
+            }
         }
     }
-}
+
+
+

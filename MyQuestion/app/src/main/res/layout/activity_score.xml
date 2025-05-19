@@ -9,39 +9,62 @@
 
     <TextView
         android:id="@+id/txtScore"
-        android:layout_width="135dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="108dp"
-        android:text="TextView"
+        android:layout_width="198dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="104dp"
+        android:text="Score"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/btnReview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="168dp"
-        android:text="Button"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="96dp"
+        android:text="Review"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/btnExit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="41dp"
-        android:layout_marginBottom="168dp"
-        android:text="Button"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="96dp"
+        android:text="Exit"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/txtFeedback"
-        android:layout_width="156dp"
-        android:layout_height="79dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="127dp"
-        tools:layout_editor_absoluteY="264dp" />
+        android:layout_width="264dp"
+        android:layout_height="192dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="160dp"
+        android:text="Feedback"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnReview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

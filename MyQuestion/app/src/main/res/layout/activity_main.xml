@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/txtWelcomeText"
-        android:layout_width="243dp"
-        android:layout_height="32dp"
+        android:layout_width="309dp"
+        android:layout_height="382dp"
         android:text="Hello World!"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -24,8 +24,8 @@
         android:id="@+id/btnStart"
         android:layout_width="145dp"
         android:layout_height="67dp"
-        android:layout_marginStart="142dp"
-        android:layout_marginBottom="306dp"
+        android:layout_marginStart="143dp"
+        android:layout_marginBottom="106dp"
         android:text="START"
         android:textSize="20sp"
         android:textStyle="bold"
