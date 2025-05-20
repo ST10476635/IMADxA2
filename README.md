@@ -8,3 +8,4 @@ after every question is answered the next button will send the user to the Score
 This screen shows the score and an Exit button as well as a Review button that show all the questions and answer.
 At the end of the review page there is a retuen button for the user to start again. Then icluded anthor exist button to end the application completely.
 
+[Screen shots of code](<../../../Downloads/My flash card app screen shots.pdf>)
