@@ -14,7 +14,12 @@ import androidx.core.view.WindowInsetsCompat
 class MainActivity2Questions : AppCompatActivity() {
 
     private val questions = arrayOf(
-        "Nelson Mandela was the president of South Africa in 1994","The World War II ended in 1945","The Berlin Wall fel in 1989","The Renaissance began in the 14th century","The United States declared independence in 1776"
+
+        "The World War II ended in 1945",
+        "The Berlin Wall fel in 1989",
+        "The Renaissance began in the 14th century",
+        "The United States declared independence in 1776",
+        "Did Apartheid end in 1998"
     )
     private val answers = booleanArrayOf(true, true, false, true, false)
     private var currentQuestionindex = 0

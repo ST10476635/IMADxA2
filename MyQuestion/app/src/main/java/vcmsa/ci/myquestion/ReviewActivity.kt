@@ -20,7 +20,12 @@ class ReviewActivity : AppCompatActivity() {
         val returnButton = findViewById<Button>(R.id.btnReturn)
 
         val questions = arrayOf(
-            "Nelson Mandela was the president of South Africa in 1994","The World War II ended in 1945","The Berlin Wall fel in 1989","The Renaissance began in the 14th century","The United States declared independence in 1776"
+
+            "The World War II ended in 1945",
+            "The Berlin Wall fel in 1989",
+            "The Renaissance began in the 14th century",
+            "The United States declared independence in 1776",
+            "Did Apartheid end in 1998"
         )
         val answers = booleanArrayOf(true,true,false,true,false)
 
@@ -28,7 +33,7 @@ class ReviewActivity : AppCompatActivity() {
 
         var reviewContent = "Review questions and answers:\n\n"
         for (i in questions.indices){
-            reviewContent+="${i+1}.${questions[1]}\n"
+            reviewContent+="${i+1}.${questions[0]}\n"
             reviewContent += "Correct answer: ${if (answers[i])"True" else "False"}\n\n"
         }
         reviewTxt.text = reviewContent
