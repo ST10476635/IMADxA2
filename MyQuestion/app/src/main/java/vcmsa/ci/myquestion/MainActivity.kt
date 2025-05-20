@@ -20,11 +20,11 @@ class MainActivity : AppCompatActivity() {
         val startButton = findViewById<Button>(R.id.btnStart)
         val welcomeScreen = findViewById<TextView>(R.id.txtWelcomeText)
 
-        welcomeScreen.text = "Welcome to Flashcard History game!\n\nTest your knowledge of historical facts with 5 True/ false questions."
+        welcomeScreen.text = "Welcome to Flashcard History game!\n\nTest your knowledge of historical facts with 5 True/ false questions." //Text to tell user the game
 
         startButton.setOnClickListener {
             val intent = Intent (this,MainActivity2Questions::class.java)
-            startActivity(intent)
+            startActivity(intent) //Button sends the user to the Questions screen
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

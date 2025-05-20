@@ -18,6 +18,7 @@ class ReviewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_review)
 
         val returnButton = findViewById<Button>(R.id.btnReturn)
+        val exitButton = findViewById<Button>(R.id.btnEnd)
 
         val questions = arrayOf(
 
@@ -33,14 +34,17 @@ class ReviewActivity : AppCompatActivity() {
 
         var reviewContent = "Review questions and answers:\n\n"
         for (i in questions.indices){
-            reviewContent+="${i+1}.${questions[0]}\n"
+            reviewContent+="${i+1}.${questions[0]}\n" //Displays the question number and the question
             reviewContent += "Correct answer: ${if (answers[i])"True" else "False"}\n\n"
         }
         reviewTxt.text = reviewContent
 
         returnButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            startActivity(intent) //Returns the user to the first screen
+        }
+        exitButton.setOnClickListener {
+            finishAffinity()//Close all activities and exist app
         }
 
 

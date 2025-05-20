@@ -18,7 +18,7 @@ class ScoreActivity : AppCompatActivity() {
         setContentView(R.layout.activity_score)
 
         val score = intent.getIntExtra("Score",0)
-        val totalQuestions = intent.getIntExtra("Total Questions",5)
+        val totalQuestions = intent.getIntExtra("Total Questions",5) //Data from the previous page to add up in this screen for the scores
 
         val restartButton = findViewById<Button>(R.id.btnRestart)
 
@@ -27,7 +27,8 @@ class ScoreActivity : AppCompatActivity() {
         val reviewButton = findViewById<Button>(R.id.btnReview)
         val exitButton = findViewById<Button>(R.id.btnExit)
 
-        scoreText.text = "Your Score: $score/$totalQuestions"
+        scoreText.text = "Your Score: $score/$totalQuestions" //The score of the user displayed in a friction
+
 
         val feedback = when{
             (score >= 4) -> {
@@ -40,7 +41,7 @@ class ScoreActivity : AppCompatActivity() {
 
             else -> {
                 "Keep practicing! History is important."
-            }
+            } //Feedback responses for the user from the game about their score
         }
         feedBackText.text = feedback
 
@@ -53,7 +54,7 @@ class ScoreActivity : AppCompatActivity() {
         }
         restartButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            startActivity(intent) //For user to retry the game
         }
 
 

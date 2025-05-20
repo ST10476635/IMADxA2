@@ -20,7 +20,7 @@ class MainActivity2Questions : AppCompatActivity() {
         "The Renaissance began in the 14th century",
         "The United States declared independence in 1776",
         "Did Apartheid end in 1998"
-    )
+    ) //Parallel arrays used for the question and answers
     private val answers = booleanArrayOf(true, true, false, true, false)
     private var currentQuestionindex = 0
     private var score = 0
@@ -28,7 +28,7 @@ class MainActivity2Questions : AppCompatActivity() {
     private fun displayQuestion() {
         val questionsText = findViewById<TextView>(R.id.txtQuestions)
         questionsText.text = questions[currentQuestionindex]
-    }
+    } // Private function that helps to get questions going 1 by 1
 
     private fun checkAnswer(userAnswer: Boolean) {
         val isCorrect = userAnswer == answers[currentQuestionindex]
