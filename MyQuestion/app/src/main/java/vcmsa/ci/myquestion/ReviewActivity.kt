@@ -1,7 +1,9 @@
 package vcmsa.ci.myquestion
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -15,10 +17,12 @@ class ReviewActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_review)
 
+        val returnButton = findViewById<Button>(R.id.btnReturn)
+
         val questions = arrayOf(
             "Nelson Mandela was the president of South Africa in 1994","The World War II ended in 1945","The Berlin Wall fel in 1989","The Renaissance began in the 14th century","The United States declared independence in 1776"
         )
-        val answers = booleanArrayOf(true,true,true,true,true)
+        val answers = booleanArrayOf(true,true,false,true,false)
 
         val reviewTxt = findViewById<TextView>(R.id.txtReview2)
 
@@ -28,6 +32,11 @@ class ReviewActivity : AppCompatActivity() {
             reviewContent += "Correct answer: ${if (answers[i])"True" else "False"}\n\n"
         }
         reviewTxt.text = reviewContent
+
+        returnButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
 
 

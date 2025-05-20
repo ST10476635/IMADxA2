@@ -11,7 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class ScoreActivity : AppCompatActivity() {
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,6 +19,8 @@ class ScoreActivity : AppCompatActivity() {
 
         val score = intent.getIntExtra("Score",0)
         val totalQuestions = intent.getIntExtra("Total Questions",5)
+
+        val restartButton = findViewById<Button>(R.id.btnRestart)
 
         val scoreText = findViewById<TextView>(R.id.txtScore)
         val feedBackText = findViewById<TextView>(R.id.txtFeedback)
@@ -48,6 +50,10 @@ class ScoreActivity : AppCompatActivity() {
         }
         exitButton.setOnClickListener {
             finishAffinity()//Close all activities and exist app
+        }
+        restartButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
 
 
