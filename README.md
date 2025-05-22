@@ -4,8 +4,11 @@ This app's purpose is to help revise history questions and assist in retaining i
 Features:
 
 Main activity screen: Start button and welcome screen
+
 MainActivity2Questions screen: Textview for questions, Next, True and False buttons.
+
 ScoreActivity: Textviews for the Scores and Feedback. Including Review,Restart and Exit buttons.                                                                         
+
 ReviewActivity: Textview Review the results. Including Return and Exit buttons.
 
 
